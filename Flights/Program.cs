@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using Airport.Domain;
+using Airport.Service;
 
 namespace Airport.UI
 {
@@ -21,8 +22,9 @@ namespace Airport.UI
             DbProviderFactories.RegisterFactory(providerName, SqlClientFactory.Instance);
 
             Repository<Flight> repository = new Repository<Flight>(connectionString, providerName);
-            
 
+            TicketSale ticketSale = new TicketSale(connectionString, providerName);
+            ticketSale.BuyTicket();
         }
     }
 }

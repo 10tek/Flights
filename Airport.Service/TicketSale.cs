@@ -26,14 +26,14 @@ namespace Airport.Service
             Repository<User> userRepos = new Repository<User>(connectionString, providerInvariantName);
             Repository<Ticket> tickedRepos = new Repository<Ticket>(connectionString, providerInvariantName);
             User user = new User();
-            userRepos.Add(new User
-            {
-                FullName = Console.ReadLine()
-            });
+            Ticket ticket = new Ticket();
+            user.FullName = Console.ReadLine();
+            userRepos.Add(user);
             tickedRepos.Add(new Ticket
             {
-                
-            })
+                UserId = user.Id,
+
+            });
 
         }
 

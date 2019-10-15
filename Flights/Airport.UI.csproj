@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Airport.DataAccess\Airport.DataAccess.csproj" />
+    <ProjectReference Include="..\Airport.Service\Airport.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
